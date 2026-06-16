@@ -1,0 +1,31 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Mi Robot 3D - Realidad Aumentada</title>
+    
+    <!-- Aquí llamamos al cerebro 3D de Google -->
+    <script type="module" src="https://ajax.googleapis.com/ajax/libs/model-viewer/3.5.0/model-viewer.min.js"></script>
+    
+    <style>
+        body { margin: 0; padding: 0; background-color: #111111; display: flex; justify-content: center; align-items: center; height: 100vh; font-family: sans-serif; }
+        model-viewer { width: 100%; height: 100%; --ar-button-display: block; }
+    </style>
+</head>
+<body>
+
+    <!-- El visor mágico. Ojo: debes cambiar "mi_robot" por el nombre exacto de tus archivos -->
+    <model-viewer 
+        src="Robot_substanceG.glb" 
+        ios-src="Robot_substanceI.usdz" 
+        ar 
+        ar-modes="scene-viewer quick-look" 
+        camera-controls 
+        shadow-intensity="1" 
+        environment-image="neutral" 
+        auto-rotate>
+    </model-viewer>
+
+</body>
+</html>
