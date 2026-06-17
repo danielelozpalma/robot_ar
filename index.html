@@ -27,31 +27,31 @@
             --ar-button-display: block; 
         }
 
-        /* DISEÑO MEJORADO Y BLINDADO: Estilo futurista sin desborde de texto */
+        /* DISEÑO FINAL: Centrado simétrico calibrado y tipografía en negrita */
         #ar-button {
             background-color: rgba(255, 255, 255, 0.08); /* Fondo con 8% de opacidad */
             backdrop-filter: blur(12px);                 /* Efecto esmerilado para Android */
             -webkit-backdrop-filter: blur(12px);         /* Efecto esmerilado para iPhone */
             
-            /* Icono de Realidad Aumentada */
+            /* Icono de Realidad Aumentada (reajustado a 18px de la izquierda) */
             background-image: url(https://modelviewer.dev/assets/ic_view_in_ar_new_googblue_24dp.png);
             background-repeat: no-repeat;
-            background-position: 20px 50%;
+            background-position: 18px 50%;
             background-size: 24px 24px;
             
             color: #ffffff;                              /* Texto blanco de alta lectura */
             font-family: sans-serif;
             font-size: 16px;
-            font-weight: 500;
-            letter-spacing: 0.5px;
             
-            /* CORRECCIÓN DE DESBORDE AQUÍ: */
+            /* CORRECCIONES ESTÉTICAS SOLICITADAS: */
+            font-weight: bold;                           /* Texto en negrita para mayor impacto */
+            padding: 0 44px 0 52px;                      /* Nuevos márgenes para equilibrar el eje central */
+            
             white-space: nowrap;                         /* Prohíbe que "espacio" se vaya abajo */
             width: auto;                                 /* Permite al botón estirarse a lo ancho */
             display: inline-block;                       /* Activa el comportamiento flexible */
             
             border-radius: 30px;                         /* Bordes completamente ovalados */
-            padding: 0 30px 0 60px;                      /* Colchón de aire equilibrado a los lados */
             height: 54px;
             line-height: 54px;
             
