@@ -27,27 +27,47 @@
             --ar-button-display: block; 
         }
 
-        /* Estilos del botón flotante optimizado para Android */
+        /* DISEÑO MEJORADO: Estilo futurista de vidrio translúcido */
         #ar-button {
-            background-color: #ffffff;
+            background-color: rgba(255, 255, 255, 0.08); /* Fondo con 8% de opacidad */
+            backdrop-filter: blur(12px);                 /* Efecto esmerilado para Android */
+            -webkit-backdrop-filter: blur(12px);         /* Efecto esmerilado para iPhone */
+            
+            /* Icono de Realidad Aumentada */
             background-image: url(https://modelviewer.dev/assets/ic_view_in_ar_new_googblue_24dp.png);
             background-repeat: no-repeat;
-            background-position: 12px 50%;
+            background-position: 20px 50%;
             background-size: 24px 24px;
-            color: #4285f4;
-            font-family: Roboto, Helvetica, Arial, sans-serif;
-            font-size: 14px;
+            
+            color: #ffffff;                              /* Texto blanco de alta lectura */
+            font-family: sans-serif;
+            font-size: 16px;
             font-weight: 500;
-            border-radius: 4px;
-            padding: 0 16px 0 44px;
-            height: 42px;
-            line-height: 42px;
-            border: 1px solid #dadce0;
+            letter-spacing: 0.5px;
+            
+            border-radius: 30px;                         /* Bordes completamente ovalados */
+            padding: 0 28px 0 56px;
+            height: 54px;
+            line-height: 54px;
+            
+            /* Biselado de cristal y sombras de profundidad */
+            border: 1px solid rgba(255, 255, 255, 0.2); 
+            box-shadow: 0 8px 32px 0 rgba(0, 0, 0, 0.37), 
+                        0 0 15px rgba(255, 255, 255, 0.05);
+            
             position: absolute;
             left: 50%;
             transform: translateX(-50%);
-            bottom: 50px; /* Lo levanta para que no lo tape la barra de navegación del teléfono */
+            bottom: 60px; /* Lo separa cómodamente de los marcos inferiores */
             z-index: 999;
+            cursor: pointer;
+            transition: all 0.3s ease;
+        }
+
+        /* Feedback visual al pulsar el botón en la pantalla táctil */
+        #ar-button:active {
+            transform: translateX(-50%) scale(0.95);
+            background-color: rgba(255, 255, 255, 0.15);
         }
     </style>
 </head>
