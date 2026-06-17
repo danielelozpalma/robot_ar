@@ -8,9 +8,47 @@
     <script type="module" src="https://ajax.googleapis.com/ajax/libs/model-viewer/3.5.0/model-viewer.min.js"></script>
     
     <style>
-        body { margin: 0; padding: 0; background-color: #111111; display: flex; justify-content: center; align-items: center; height: 100vh; font-family: sans-serif; }
-        /* Ajustamos la altura al 90% para evitar que las barras móviles oculten el botón en iOS */
-        model-viewer { width: 100%; height: 90vh; --ar-button-display: block; }
+        body { 
+            margin: 0; 
+            padding: 0; 
+            background-color: #111111; 
+            display: flex; 
+            justify-content: center; 
+            align-items: center; 
+            height: 100vh; 
+            font-family: sans-serif; 
+            overflow: hidden; 
+        }
+        
+        /* Ajustado a 85vh para dar espacio de sobra a las barras de Safari y Chrome */
+        model-viewer { 
+            width: 100%; 
+            height: 85vh; 
+            --ar-button-display: block; 
+        }
+
+        /* Estilos del botón flotante optimizado para Android */
+        #ar-button {
+            background-color: #ffffff;
+            background-image: url(https://modelviewer.dev/assets/ic_view_in_ar_new_googblue_24dp.png);
+            background-repeat: no-repeat;
+            background-position: 12px 50%;
+            background-size: 24px 24px;
+            color: #4285f4;
+            font-family: Roboto, Helvetica, Arial, sans-serif;
+            font-size: 14px;
+            font-weight: 500;
+            border-radius: 4px;
+            padding: 0 16px 0 44px;
+            height: 42px;
+            line-height: 42px;
+            border: 1px solid #dadce0;
+            position: absolute;
+            left: 50%;
+            transform: translateX(-50%);
+            bottom: 50px; /* Lo levanta para que no lo tape la barra de navegación del teléfono */
+            z-index: 999;
+        }
     </style>
 </head>
 <body>
@@ -26,6 +64,11 @@
         auto-rotate
         ar-scale="fixed"
         disable-zoom>
+        
+        <button slot="ar-button" id="ar-button">
+            Ver en tu espacio
+        </button>
+        
     </model-viewer>
 
 </body>
